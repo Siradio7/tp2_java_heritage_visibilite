@@ -53,4 +53,9 @@ public class Boite<T> {
 
         return list1;
     }
+
+    @Override
+    public String toString() {
+        return this.contenu.toString();
+    }
 }
