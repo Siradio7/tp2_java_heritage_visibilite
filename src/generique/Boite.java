@@ -43,4 +43,14 @@ public class Boite<T> {
     public int size() {
         return this.contenu.size();
     }
+
+    public static <T> List<T> merge(List<T> list1, List<T> list2) {
+        if (list1 == null && list2 == null) return null;
+        if (list1 == null) return list2;
+        if (list2 == null) return list1;
+
+        list1.addAll(list2);
+
+        return list1;
+    }
 }
