@@ -1,5 +1,6 @@
 import bank.BankAccount;
 import bank.SavingsAccount;
+import generique.Boite;
 
 public class Main {
     public static void main(String[] args) {
@@ -17,6 +18,7 @@ public class Main {
 
         */
 
+        /*
         BankAccount account = new BankAccount(45604, 200.0, "Mr X");
         SavingsAccount savingsAccount = new SavingsAccount(450, 3000.0, "Mr Y", 12.5f);
 
@@ -48,6 +50,21 @@ public class Main {
         account1.displayAccountInfo();
         account2.displayAccountInfo();
 
+        */
 
+        // Test générique
+        // Boîte pour stocker des String
+        Boite<String> boiteDeString = new Boite<>();
+        boiteDeString.add("Bonjour");
+        boiteDeString.add("Monde");
+
+        // Boîte pour stocker des Integer
+        Boite<Integer> boiteDeInteger = new Boite<>();
+        boiteDeInteger.add(42);
+        boiteDeInteger.add(2025);
+
+        // Affichage des contenus
+        System.out.println("Contenu de la boîte de String : " + boiteDeString.getContenu());
+        System.out.println("Contenu de la boîte d'Integer : " + boiteDeInteger.getContenu());
     }
 }
