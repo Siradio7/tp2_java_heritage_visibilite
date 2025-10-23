@@ -2,6 +2,9 @@ import bank.BankAccount;
 import bank.SavingsAccount;
 import generique.Boite;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
         /*
@@ -66,5 +69,16 @@ public class Main {
         // Affichage des contenus
         System.out.println("Contenu de la boîte de String : " + boiteDeString.getContenu());
         System.out.println("Contenu de la boîte d'Integer : " + boiteDeInteger.getContenu());
+
+        // Test de merge
+        List<String> list1 = new ArrayList<>();
+        List<String> list2 = new ArrayList<>();
+
+        list1.add("Bonjour");
+        list2.add("comment ça va ?");
+
+        List<String> resultatMerge = Boite.merge(list1, list2);
+
+        System.out.println("Résultat du merge : " + resultatMerge);
     }
 }
