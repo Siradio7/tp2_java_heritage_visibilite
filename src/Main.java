@@ -1,5 +1,6 @@
 import bank.BankAccount;
 import bank.SavingsAccount;
+import bibliotheque.*;
 import generique.Boite;
 
 import java.util.ArrayList;
@@ -122,6 +123,28 @@ public class Main {
 
         System.out.println("\n=== Liste de Boite<Integer> ===");
         afficheBoites(listeBoitesInteger);
+
+        // Test bibliotheque
+        DVD dvd = new DVD("Flash", "Mr X", "2014", "9 saisons");
+        Livre livre = new Livre("Java pour les nuls", "Mr Y", "2017", 526);
+        Magazine magazine = new Magazine("XXX", "ZZZ", "2015", 45);
+
+
+        Boite<Document> boiteLivres = new Boite<>();
+        Boite<Document> boiteDVD = new Boite<>();
+        Boite<Document> boiteMagazine = new Boite<>();
+        boiteLivres.add(livre);
+        boiteDVD.add(dvd);
+        boiteMagazine.add(magazine);
+
+        List<Boite<Document>> armoires = new ArrayList<>();
+        armoires.add(boiteLivres);
+        armoires.add(boiteDVD);
+        armoires.add(boiteMagazine);
+
+        Bibliotheque bibliotheque = new Bibliotheque(armoires);
+
+        bibliotheque.afficherTousLesDocuments();
     }
 
     public static <T> void afficheBoites(List<Boite<T>> boites) {
