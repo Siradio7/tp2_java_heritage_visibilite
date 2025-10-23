@@ -78,8 +78,50 @@ public class Main {
         list2.add("comment ça va ?");
 
         List<String> resultatMerge = Boite.merge(list1, list2);
-
         System.out.println("Résultat du merge : " + resultatMerge);
+
+        // Collections génériques
+        List<Boite<String>> listeBoitesString = new ArrayList<>();
+
+        // Création de plusieurs boîtes avec des contenus différents
+        Boite<String> boite1 = new Boite<>();
+        boite1.add("Bonjour");
+        boite1.add("Monde");
+
+        Boite<String> boite2 = new Boite<>();
+        boite2.add("CodinGame");
+        boite2.add("Tainix");
+
+        Boite<String> boite3 = new Boite<>();
+        boite3.add("Java");
+        boite3.add("Génériques");
+
+        // Ajout des boîtes à la collection
+        listeBoitesString.add(boite1);
+        listeBoitesString.add(boite2);
+        listeBoitesString.add(boite3);
+
+        // Parcours et affichage du contenu de chaque boîte
+        System.out.println("=== Liste de Boite<String> ===");
+        afficheBoites(listeBoitesString);
+
+
+        // Création d'une liste de Boite<Integer>
+        List<Boite<Integer>> listeBoitesInteger = new ArrayList<>();
+
+        Boite<Integer> boiteInt1 = new Boite<>();
+        boiteInt1.add(10);
+        boiteInt1.add(20);
+
+        Boite<Integer> boiteInt2 = new Boite<>();
+        boiteInt2.add(100);
+        boiteInt2.add(200);
+
+        listeBoitesInteger.add(boiteInt1);
+        listeBoitesInteger.add(boiteInt2);
+
+        System.out.println("\n=== Liste de Boite<Integer> ===");
+        afficheBoites(listeBoitesInteger);
     }
 
     public static <T> void afficheBoites(List<Boite<T>> boites) {
