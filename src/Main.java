@@ -81,4 +81,10 @@ public class Main {
 
         System.out.println("Résultat du merge : " + resultatMerge);
     }
+
+    public static <T> void afficheBoites(List<Boite<T>> boites) {
+        for (Boite<T> boite : boites) {
+            System.out.println(boite);
+        }
+    }
 }
